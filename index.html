@@ -121,7 +121,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-count">3</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -144,6 +144,85 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://awp-01.github.io/2023/12/20/Convert-ppm-to-mp4-using-ffmpeg/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Space boy!">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Space boy's blog">
+      <meta itemprop="description" content="Welcome to my technical blog, where I would share some of my learning and experience in Computational Fluid Dynamics(CFD) and computer knowledge.">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Space boy's blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2023/12/20/Convert-ppm-to-mp4-using-ffmpeg/" class="post-title-link" itemprop="url">Convert ppm to mp4 using ffmpeg</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2023-12-20 22:11:43 / Modified: 23:47:56" itemprop="dateCreated datePublished" datetime="2023-12-20T22:11:43+08:00">2023-12-20</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/basilisk/" itemprop="url" rel="index"><span itemprop="name">basilisk</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="Description"><a href="#Description" class="headerlink" title="Description:"></a>Description:</h1><p>I use a supercomputer to generate PPM(Portable Pixmap Format) high resolution image flows for simulation results. Convert it to a mp4 movie is desirable because the mp4 file is small and plays automatically when opened. ffmpeg is a very powerful tool to convert image&#x2F;video format, but its commad parameters are very cumbersome. Here is the ffmpeg command to generate the mp4 file.</p>
+<h1 id="Command"><a href="#Command" class="headerlink" title="Command"></a>Command</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -f(convert format) image2pipe(ppm figures to stream pipe) -vcodec(the decoder) ppm -i(input file) movie.mp4.ppm -vf(the video format) <span class="string">&quot;scale=1024(don&#x27;t be too large):-1(keep the aspect ratio), format=yuv420p(a color scheme different from RGB)&quot;</span> movie.mp4(the destination file)  </span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 

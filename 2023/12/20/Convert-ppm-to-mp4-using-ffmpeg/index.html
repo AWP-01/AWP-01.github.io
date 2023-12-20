@@ -19,25 +19,27 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"awp-01.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.18.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"width":300},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="Welcome to my technical blog, where I would share some of my learning and experience in Computational Fluid Dynamics(CFD) and computer knowledge.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Space boy&#39;s blog">
-<meta property="og:url" content="https://awp-01.github.io/archives/2023/12/index.html">
+    <meta name="description" content="Description:I use a supercomputer to generate PPM(Portable Pixmap Format) high resolution image flows for simulation results. Convert it to a mp4 movie is desirable because the mp4 file is small and p">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Convert ppm to mp4 using ffmpeg">
+<meta property="og:url" content="https://awp-01.github.io/2023/12/20/Convert-ppm-to-mp4-using-ffmpeg/index.html">
 <meta property="og:site_name" content="Space boy&#39;s blog">
-<meta property="og:description" content="Welcome to my technical blog, where I would share some of my learning and experience in Computational Fluid Dynamics(CFD) and computer knowledge.">
+<meta property="og:description" content="Description:I use a supercomputer to generate PPM(Portable Pixmap Format) high resolution image flows for simulation results. Convert it to a mp4 movie is desirable because the mp4 file is small and p">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-12-20T14:11:43.000Z">
+<meta property="article:modified_time" content="2023-12-20T15:47:56.852Z">
 <meta property="article:author" content="Space boy!">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://awp-01.github.io/archives/2023/12/">
+<link rel="canonical" href="https://awp-01.github.io/2023/12/20/Convert-ppm-to-mp4-using-ffmpeg/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"en","comments":"","permalink":"","path":"archives/2023/12/index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://awp-01.github.io/2023/12/20/Convert-ppm-to-mp4-using-ffmpeg/","path":"2023/12/20/Convert-ppm-to-mp4-using-ffmpeg/","title":"Convert ppm to mp4 using ffmpeg"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Archive | Space boy's blog</title>
+<title>Convert ppm to mp4 using ffmpeg | Space boy's blog</title>
   
 
 
@@ -70,7 +72,7 @@
 
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
-      <h1 class="site-title">Space boy's blog</h1>
+      <p class="site-title">Space boy's blog</p>
       <i class="logo-line"></i>
     </a>
   </div>
@@ -96,7 +98,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           Table of Contents
@@ -109,6 +111,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Description"><span class="nav-number">1.</span> <span class="nav-text">Description:</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Command"><span class="nav-number">2.</span> <span class="nav-text">Command</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -143,69 +146,97 @@
 
     </div>
 
-    <div class="main-inner archive posts-collapse">
+    <div class="main-inner post posts-expand">
 
 
   
-  
-  
-  <div class="post-block">
-    <div class="post-content">
-      <div class="collection-title">
-        <span class="collection-header">Um..! 3 posts in total. Keep on posting.</span>
-      </div>
 
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://awp-01.github.io/2023/12/20/Convert-ppm-to-mp4-using-ffmpeg/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Space boy!">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Space boy's blog">
+      <meta itemprop="description" content="Welcome to my technical blog, where I would share some of my learning and experience in Computational Fluid Dynamics(CFD) and computer knowledge.">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Convert ppm to mp4 using ffmpeg | Space boy's blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Convert ppm to mp4 using ffmpeg
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
       
-    <div class="collection-year">
-      <span class="collection-header">2023</span>
+
+      <time title="Created: 2023-12-20 22:11:43 / Modified: 23:47:56" itemprop="dateCreated datePublished" datetime="2023-12-20T22:11:43+08:00">2023-12-20</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/basilisk/" itemprop="url" rel="index"><span itemprop="name">basilisk</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h1 id="Description"><a href="#Description" class="headerlink" title="Description:"></a>Description:</h1><p>I use a supercomputer to generate PPM(Portable Pixmap Format) high resolution image flows for simulation results. Convert it to a mp4 movie is desirable because the mp4 file is small and plays automatically when opened. ffmpeg is a very powerful tool to convert image&#x2F;video format, but its commad parameters are very cumbersome. Here is the ffmpeg command to generate the mp4 file.</p>
+<h1 id="Command"><a href="#Command" class="headerlink" title="Command"></a>Command</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -f(convert format) image2pipe(ppm figures to stream pipe) -vcodec(the decoder) ppm -i(input file) movie.mp4.ppm -vf(the video format) <span class="string">&quot;scale=1024(don&#x27;t be too large):-1(keep the aspect ratio), format=yuv420p(a color scheme different from RGB)&quot;</span> movie.mp4(the destination file)  </span><br></pre></td></tr></table></figure>
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2023-12-20T22:11:43+08:00"
-              content="2023-12-20">
-          12-20
-        </time>
-      </div>
+    
+    
+    
 
-      <div class="post-title">
-        <a class="post-title-link" href="/2023/12/20/Convert-ppm-to-mp4-using-ffmpeg/" itemprop="url">
-          <span itemprop="name">Convert ppm to mp4 using ffmpeg</span>
-        </a>
-      </div>
+    <footer class="post-footer">
 
-      
-    </header>
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2023/12/19/Install-older-version-Basilisk-from-source/" rel="prev" title="Install older version Basilisk from source">
+                  <i class="fa fa-angle-left"></i> Install older version Basilisk from source
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
   </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2023-12-19T18:26:02+08:00"
-              content="2023-12-19">
-          12-19
-        </time>
-      </div>
-
-      <div class="post-title">
-        <a class="post-title-link" href="/2023/12/19/Install-older-version-Basilisk-from-source/" itemprop="url">
-          <span itemprop="name">Install older version Basilisk from source</span>
-        </a>
-      </div>
-
-      
-    </header>
-  </article>
+</div>
 
 
-    </div>
-  </div>
-  
-  
-  
+
+
+
 
 </div>
   </main>
