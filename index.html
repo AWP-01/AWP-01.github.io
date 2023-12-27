@@ -121,7 +121,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-count">4</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -144,6 +144,82 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://awp-01.github.io/2023/12/27/Convert-Tab-to-4-spaces-in-vim/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Space boy!">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Space boy's blog">
+      <meta itemprop="description" content="Welcome to my technical blog, where I would share some of my learning and experience in Computational Fluid Dynamics(CFD) and computer knowledge.">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Space boy's blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2023/12/27/Convert-Tab-to-4-spaces-in-vim/" class="post-title-link" itemprop="url">Convert Tab to 4 spaces in vim</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2023-12-27 16:42:38 / Modified: 17:07:58" itemprop="dateCreated datePublished" datetime="2023-12-27T16:42:38+08:00">2023-12-27</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>We usually use the “Tab” key for quick indention in code writing. However, the Tab key(tabulator key) is not equal to indention. Particularly in Python, using Tab for indention may cause complication error. Here is how to make the Tab key be equivalent to 4 spaces for indention in Python.</p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>I use the vim editor to write code. Therefore, go to the <code>~/.vimrc</code> configure file and add the following code:  </p>
+<pre><code>set shiftwidth=4 smarttab
+set expandtab
+</code></pre>
+<p>Then <code>source ~/.vimrc</code> to make it happen.<br><code>set shiftwidth=4</code> This sets the number of spaces for each level of indentation to 4. When you press the Tab key or use automatic indentation, Vim will insert or remove spaces in multiples of 4.<br><code>set smarttab</code> When this option is set, Vim will use the shiftwidth value (in this case, 4) for shifting, but <strong>it will use the tabstop value for inserting actual tab characters</strong>. If smarttab is not set, the Tab key inserts spaces based on the shiftwidth value.<br><code>set expandtab</code> This option is used to <strong>make Vim insert spaces instead of actual tab characters when you press the Tab key for indentation. When expandtab is set, Vim replaces tabs with spaces according to the shiftwidth value</strong>.<br>(From ChatGPT-3.5)  </p>
+<h2 id="Expansion"><a href="#Expansion" class="headerlink" title="Expansion"></a>Expansion</h2><p>The tab key Tab (abbreviation of tabulator key or tabular key) on a keyboard is <strong>used to advance the cursor to the next tab stop</strong>.<br>The word tab derives from the word tabulate, which means “to arrange data in a tabular, or table, form.” When a person wanted to type a table (of numbers or text) on a typewriter, there was a lot of time-consuming and repetitive use of the space bar and backspace key. To simplify this, a horizontal bar was placed in the mechanism called the tabulator rack(制表机架). Pressing the tab key would advance the carriage to the next tabulator stop. The original tabulator stops were adjustable clips(夹子) that could be arranged by the user on the tabulator rack. Fredric Hillard filed a patent application for such a mechanism in 1900.<br>(From Wikipedia: Tab key)</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
