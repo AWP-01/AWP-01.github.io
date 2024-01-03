@@ -19,29 +19,31 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"awp-01.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.18.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"width":300},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="路由器简单结构及购买注意事项，本文摘录自电脑吧测评室公众号，仅对个人认为重要的部分总结，全文请移步和支持: 路由器如何选择、什么是好的路由器 8.0  (https:&#x2F;&#x2F;mp.weixin.qq.com&#x2F;s&#x2F;fQw5gkHOmoLjT8wxS0e62g) 路由器的基本组成(图自电脑吧测评室):这个思维导图基本上就包括了一个路由器的硬件结构，从WAN口进入到LAN口或者无线网出所需要的硬件，其中红色">
+    <meta name="description" content="DescriptionIn the field of computer hardware, we usually see a word “PCIe” for the motherboard(主板), for example. Here is a note and summary about what is PCIe and how to choose it when we buy computer">
 <meta property="og:type" content="article">
-<meta property="og:title" content="How to pick one WIFI router?">
-<meta property="og:url" content="https://awp-01.github.io/2024/01/02/How-to-pick-one-WIFI-router/index.html">
+<meta property="og:title" content="What is PCIe and how to choose it?">
+<meta property="og:url" content="https://awp-01.github.io/2024/01/03/What-is-PCIe-and-how-to-choose-it/index.html">
 <meta property="og:site_name" content="Space boy&#39;s blog">
-<meta property="og:description" content="路由器简单结构及购买注意事项，本文摘录自电脑吧测评室公众号，仅对个人认为重要的部分总结，全文请移步和支持: 路由器如何选择、什么是好的路由器 8.0  (https:&#x2F;&#x2F;mp.weixin.qq.com&#x2F;s&#x2F;fQw5gkHOmoLjT8wxS0e62g) 路由器的基本组成(图自电脑吧测评室):这个思维导图基本上就包括了一个路由器的硬件结构，从WAN口进入到LAN口或者无线网出所需要的硬件，其中红色">
+<meta property="og:description" content="DescriptionIn the field of computer hardware, we usually see a word “PCIe” for the motherboard(主板), for example. Here is a note and summary about what is PCIe and how to choose it when we buy computer">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://awp-01.github.io/images/fig/%E8%B7%AF%E7%94%B1%E5%99%A8%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%9E%84%E9%80%A0.png">
-<meta property="article:published_time" content="2024-01-02T10:16:14.000Z">
-<meta property="article:modified_time" content="2024-01-02T12:20:09.566Z">
+<meta property="og:image" content="https://awp-01.github.io/images/fig/PCIe_slot.jpg">
+<meta property="og:image" content="https://awp-01.github.io/images/fig/PCIex16.jpg">
+<meta property="og:image" content="https://awp-01.github.io/images/fig/PCIe_standard.png">
+<meta property="article:published_time" content="2024-01-03T04:48:21.000Z">
+<meta property="article:modified_time" content="2024-01-03T05:38:07.340Z">
 <meta property="article:author" content="Space boy!">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://awp-01.github.io/images/fig/%E8%B7%AF%E7%94%B1%E5%99%A8%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%9E%84%E9%80%A0.png">
+<meta name="twitter:image" content="https://awp-01.github.io/images/fig/PCIe_slot.jpg">
 
 
-<link rel="canonical" href="https://awp-01.github.io/2024/01/02/How-to-pick-one-WIFI-router/">
+<link rel="canonical" href="https://awp-01.github.io/2024/01/03/What-is-PCIe-and-how-to-choose-it/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://awp-01.github.io/2024/01/02/How-to-pick-one-WIFI-router/","path":"2024/01/02/How-to-pick-one-WIFI-router/","title":"How to pick one WIFI router?"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://awp-01.github.io/2024/01/03/What-is-PCIe-and-how-to-choose-it/","path":"2024/01/03/What-is-PCIe-and-how-to-choose-it/","title":"What is PCIe and how to choose it?"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>How to pick one WIFI router? | Space boy's blog</title>
+<title>What is PCIe and how to choose it? | Space boy's blog</title>
   
 
 
@@ -100,7 +102,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           Table of Contents
@@ -113,6 +115,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Description"><span class="nav-number">1.</span> <span class="nav-text">Description</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#About-the-PCIe-hardware"><span class="nav-number">2.</span> <span class="nav-text">About the PCIe hardware</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#How-to-choose-a-PCIe-hardware"><span class="nav-number">3.</span> <span class="nav-text">How to choose a PCIe hardware?</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -158,7 +161,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://awp-01.github.io/2024/01/02/How-to-pick-one-WIFI-router/">
+    <link itemprop="mainEntityOfPage" href="https://awp-01.github.io/2024/01/03/What-is-PCIe-and-how-to-choose-it/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -171,12 +174,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="How to pick one WIFI router? | Space boy's blog">
+      <meta itemprop="name" content="What is PCIe and how to choose it? | Space boy's blog">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          How to pick one WIFI router?
+          What is PCIe and how to choose it?
         </h1>
 
         <div class="post-meta-container">
@@ -188,7 +191,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2024-01-02 18:16:14 / Modified: 20:20:09" itemprop="dateCreated datePublished" datetime="2024-01-02T18:16:14+08:00">2024-01-02</time>
+      <time title="Created: 2024-01-03 12:48:21 / Modified: 13:38:07" itemprop="dateCreated datePublished" datetime="2024-01-03T12:48:21+08:00">2024-01-03</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -209,16 +212,19 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>路由器简单结构及购买注意事项，本文摘录自<b><span style='color:blue;'>电脑吧测评室公众号</span></b>，仅对个人认为重要的部分总结，全文请移步和支持: 路由器如何选择、什么是好的路由器 8.0  (<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/fQw5gkHOmoLjT8wxS0e62g">https://mp.weixin.qq.com/s/fQw5gkHOmoLjT8wxS0e62g</a>)</p>
-<p>路由器的基本组成(图自电脑吧测评室):<br><img src="/images/fig/%E8%B7%AF%E7%94%B1%E5%99%A8%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%9E%84%E9%80%A0.png" alt="路由器基本构造"><br>这个思维导图基本上就包括了一个路由器的硬件结构，<strong>从WAN口进入到LAN口或者无线网出所需要的硬件，其中红色字体为必须「可以理解为最低配置」，其余为可选配置</strong>。</p>
+    <div class="post-body" itemprop="articleBody"><h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>In the field of computer hardware, we usually see a word “PCIe” for the motherboard(主板), for example. Here is a note and summary about what is PCIe and how to choose it when we buy computers. The information is collected from the web. Check and support the original posts for full information.</p>
+<p><b><span style='color:#FF0000;'>Reference</span></b>:  </p>
 <ul>
-<li>5G热点，很多主控都集成了5G的控制器，但是主控自身集成的信号源会比5GWIFI芯片+FEM 处理过的信号差很多，<strong>因此一般有独立5G WIFI芯片+放大电路的路由器在信号强度上就强于SOC直出</strong>；</li>
-<li>同理，SOC内部一般也可以集成一定大小的内存「32M、64M这种」，对比独立的RAM来说，虽然物理空间离SOC更近，但是实际上速率和容量都偏小，<strong>路由器的RAM目前正常都在1G或者512M，大一些的也有2G</strong>；</li>
-<li>ROM同样也有大小区别，从8M到512M都有，<strong>对应就是支持的固件大小和功能丰富性</strong>，对于一些路由器来说256M以上的大小可以刷一些第三方的系统或者安装更多的插件实现更丰富的功能。</li>
-<li>另外，<strong>一些低端路由器SOC集成功能较多，所以相对发热量也会集中</strong>，但是又因为是低端路由器，所以一般而言散热也会有一定程度的缩水，对于硬件来说就是火上浇油了，很容易过热。有很多路由器其实硬件本身是属于‘能用’的，<strong>但是因为散热缩水，所以SOC或者其他芯片长期运行在高温环境下，因此触发降频，导致出现无线网卡顿、丢包、断流等情况，因此判断一个路由器好坏，散热也是不可缺少的</strong>。</li>
-<li>品牌 TP-Link: TP没别的特色，始终钟爱这种指甲盖大小的陶瓷散热片，实际散热能力接近裸奔「目前为止，TP还有路由器用这种陶瓷块」。另外这个路由器，虽然有2.4G和5G的WIFI芯片，<strong>但是芯片直接裸奔的，并且没有FEM或者屏蔽罩等措施，8根天线均为焊接连接，基本上就是缩水的典型~~~你说硬件很差吧，其实也没有很差，但是表现就很狗屎，因为一直过热降频，不改散热没法用。介于TP的优良传统，所以在买了一堆TP路由器之后，这个牌子我彻底拉黑了</strong>。</li>
+<li>[1]PCI Express: <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/PCI_Express">https://en.wikipedia.org/wiki/PCI_Express</a>  </li>
+<li>[2]What is PCIe and how does it work?: <a target="_blank" rel="noopener" href="https://www.lenovo.com/sg/en/glossary/what-is-pcie/?orgRef=https%253A%252F%252Fwww.google.com%252F">https://www.lenovo.com/sg/en/glossary/what-is-pcie/?orgRef=https%253A%252F%252Fwww.google.com%252F</a></li>
+<li>[3]Explaining PCIe Slots: <a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=PrXwe21biJo&t=653s">https://www.youtube.com/watch?v=PrXwe21biJo&amp;t=653s</a></li>
 </ul>
-<p><b><span style='color:red;'>总结：应该购买部件分离设计、考虑电路屏蔽、考虑散热的路由器，如中兴路由器</span></b>。</p>
+<h2 id="About-the-PCIe-hardware"><a href="#About-the-PCIe-hardware" class="headerlink" title="About the PCIe hardware"></a>About the PCIe hardware</h2><p>PCI Express (Peripheral Component Interconnect Express，外部设备快速互联), officially abbreviated as PCIe or PCI-e, <strong>is a high-speed serial computer expansion bus standard</strong>, designed to replace the older PCI, PCI-X and AGP bus standards. It is the common motherboard interface for personal computers’ graphics cards, sound cards, hard disk drive host adapters, SSDs, Wi-Fi and Ethernet hardware connections. PCIe has numerous improvements over the older standards, including higher maximum system bus throughput, lower I&#x2F;O pin count and smaller physical footprint, better performance scaling for bus devices, a more detailed error detection and reporting mechanism (Advanced Error Reporting, AER), and native hot-swap functionality. More recent revisions of the PCIe standard provide hardware support for I&#x2F;O virtualization.[1]   </p>
+<p>In its simplest form, <strong>PCIe is a point-to-point connection between two PCIe compatible devices, typically a motherboard and an expansion card or storage device such as an SSD or hard drive</strong>. The connection uses differential signaling to transmit data over separate pairs of copper wires.[2]  </p>
+<p>To ensure optimal performance and compatibility across multiple devices, the PCIe standard uses different lane sizes(通道尺寸) which can link together two or more components at once depending on their speed requirements. <strong>For instance, larger lanes such as x16 are typically used for graphics cards that require lots of bandwidth for high resolution content; while smaller lanes like x1 are reserved for lower speed peripherals like USB ports or SATA ports</strong>.[2] Here is a typical PCIe slot from reference [3].<br><img src="/images/fig/PCIe_slot.jpg" alt="a typical PCIe slot"></p>
+<p>We usually see the name of a PCIe slot as “PCIe 5.0 x16” for example. <strong>It means the slot is in PCIe 5.0 standard and the lane size is 16 times the PCIe x1</strong> (usually the larger the slot will be). The higher the standard, the faster the transmission is. Also, the larger the lane size, the more data can be transferred at the same time. Here is a figure showing the concept from ref[3].<br><img src="/images/fig/PCIex16.jpg" alt="PCIex16"><br>Here is the PCIe standard table and the corresponding speeds[3].<br><img src="/images/fig/PCIe_standard.png" alt="PCIe_standard"></p>
+<p>Usually, different PCIe standards are compatible with each other. The data transfer speed is limitted by the lower speed hardware. Note that <strong>PCI and PCIe are not compatible with each other</strong>. This is because the two protocols(协议) use completely different interfaces that feature different pin configurations as well as varying bus speeds and features – as a result, hardware developed for one protocol will not work properly on the other.</p>
+<h2 id="How-to-choose-a-PCIe-hardware"><a href="#How-to-choose-a-PCIe-hardware" class="headerlink" title="How to choose a PCIe hardware?"></a>How to choose a PCIe hardware?</h2><p>As shown above, the higher the standard, the faster the transmission is. Also, the larger the lane size, the more data can be transferred at the same time. Also, different PCIe standards are compatible with each other if needed.</p>
 
     </div>
 
@@ -232,14 +238,11 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2023/12/27/Convert-Tab-to-4-spaces-in-vim/" rel="prev" title="Convert Tab to 4 spaces in vim">
-                  <i class="fa fa-angle-left"></i> Convert Tab to 4 spaces in vim
+                <a href="/2024/01/02/How-to-pick-one-WIFI-router/" rel="prev" title="How to pick one WIFI router?">
+                  <i class="fa fa-angle-left"></i> How to pick one WIFI router?
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2024/01/03/What-is-PCIe-and-how-to-choose-it/" rel="next" title="What is PCIe and how to choose it?">
-                  What is PCIe and how to choose it? <i class="fa fa-angle-right"></i>
-                </a>
             </div>
           </div>
     </footer>

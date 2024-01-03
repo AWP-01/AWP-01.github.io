@@ -121,7 +121,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-count">6</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -144,6 +144,97 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://awp-01.github.io/2024/01/03/What-is-PCIe-and-how-to-choose-it/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Space boy!">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Space boy's blog">
+      <meta itemprop="description" content="Welcome to my technical blog, where I would share some of my learning and experience in Computational Fluid Dynamics(CFD) and computer knowledge.">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Space boy's blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2024/01/03/What-is-PCIe-and-how-to-choose-it/" class="post-title-link" itemprop="url">What is PCIe and how to choose it?</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2024-01-03 12:48:21 / Modified: 13:38:07" itemprop="dateCreated datePublished" datetime="2024-01-03T12:48:21+08:00">2024-01-03</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/hardware/" itemprop="url" rel="index"><span itemprop="name">hardware</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>In the field of computer hardware, we usually see a word “PCIe” for the motherboard(主板), for example. Here is a note and summary about what is PCIe and how to choose it when we buy computers. The information is collected from the web. Check and support the original posts for full information.</p>
+<p><b><span style='color:#FF0000;'>Reference</span></b>:  </p>
+<ul>
+<li>[1]PCI Express: <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/PCI_Express">https://en.wikipedia.org/wiki/PCI_Express</a>  </li>
+<li>[2]What is PCIe and how does it work?: <a target="_blank" rel="noopener" href="https://www.lenovo.com/sg/en/glossary/what-is-pcie/?orgRef=https%253A%252F%252Fwww.google.com%252F">https://www.lenovo.com/sg/en/glossary/what-is-pcie/?orgRef=https%253A%252F%252Fwww.google.com%252F</a></li>
+<li>[3]Explaining PCIe Slots: <a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=PrXwe21biJo&t=653s">https://www.youtube.com/watch?v=PrXwe21biJo&amp;t=653s</a></li>
+</ul>
+<h2 id="About-the-PCIe-hardware"><a href="#About-the-PCIe-hardware" class="headerlink" title="About the PCIe hardware"></a>About the PCIe hardware</h2><p>PCI Express (Peripheral Component Interconnect Express，外部设备快速互联), officially abbreviated as PCIe or PCI-e, <strong>is a high-speed serial computer expansion bus standard</strong>, designed to replace the older PCI, PCI-X and AGP bus standards. It is the common motherboard interface for personal computers’ graphics cards, sound cards, hard disk drive host adapters, SSDs, Wi-Fi and Ethernet hardware connections. PCIe has numerous improvements over the older standards, including higher maximum system bus throughput, lower I&#x2F;O pin count and smaller physical footprint, better performance scaling for bus devices, a more detailed error detection and reporting mechanism (Advanced Error Reporting, AER), and native hot-swap functionality. More recent revisions of the PCIe standard provide hardware support for I&#x2F;O virtualization.[1]   </p>
+<p>In its simplest form, <strong>PCIe is a point-to-point connection between two PCIe compatible devices, typically a motherboard and an expansion card or storage device such as an SSD or hard drive</strong>. The connection uses differential signaling to transmit data over separate pairs of copper wires.[2]  </p>
+<p>To ensure optimal performance and compatibility across multiple devices, the PCIe standard uses different lane sizes(通道尺寸) which can link together two or more components at once depending on their speed requirements. <strong>For instance, larger lanes such as x16 are typically used for graphics cards that require lots of bandwidth for high resolution content; while smaller lanes like x1 are reserved for lower speed peripherals like USB ports or SATA ports</strong>.[2] Here is a typical PCIe slot from reference [3].<br><img src="/images/fig/PCIe_slot.jpg" alt="a typical PCIe slot"></p>
+<p>We usually see the name of a PCIe slot as “PCIe 5.0 x16” for example. <strong>It means the slot is in PCIe 5.0 standard and the lane size is 16 times the PCIe x1</strong> (usually the larger the slot will be). The higher the standard, the faster the transmission is. Also, the larger the lane size, the more data can be transferred at the same time. Here is a figure showing the concept from ref[3].<br><img src="/images/fig/PCIex16.jpg" alt="PCIex16"><br>Here is the PCIe standard table and the corresponding speeds[3].<br><img src="/images/fig/PCIe_standard.png" alt="PCIe_standard"></p>
+<p>Usually, different PCIe standards are compatible with each other. The data transfer speed is limitted by the lower speed hardware. Note that <strong>PCI and PCIe are not compatible with each other</strong>. This is because the two protocols(协议) use completely different interfaces that feature different pin configurations as well as varying bus speeds and features – as a result, hardware developed for one protocol will not work properly on the other.</p>
+<h2 id="How-to-choose-a-PCIe-hardware"><a href="#How-to-choose-a-PCIe-hardware" class="headerlink" title="How to choose a PCIe hardware?"></a>How to choose a PCIe hardware?</h2><p>As shown above, the higher the standard, the faster the transmission is. Also, the larger the lane size, the more data can be transferred at the same time. Also, different PCIe standards are compatible with each other if needed.</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
