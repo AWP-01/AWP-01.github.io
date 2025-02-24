@@ -121,14 +121,18 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-count">7</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">tags</span>
       </div>
   </nav>
 </div>
@@ -144,6 +148,122 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://awp-01.github.io/2025/02/24/Install-docker-on-Windows-Server-system/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Space boy!">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Space boy's blog">
+      <meta itemprop="description" content="Welcome to my technical blog, where I would share some of my learning and experience in Computational Fluid Dynamics(CFD) and computer knowledge.">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Space boy's blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2025/02/24/Install-docker-on-Windows-Server-system/" class="post-title-link" itemprop="url">Install docker on Windows Server system</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2025-02-24 17:19:50 / Modified: 19:23:05" itemprop="dateCreated datePublished" datetime="2025-02-24T17:19:50+08:00">2025-02-24</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/AI-LLM/" itemprop="url" rel="index"><span itemprop="name">AI-LLM</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="服务器版本docker安装教程"><a href="#服务器版本docker安装教程" class="headerlink" title="服务器版本docker安装教程"></a>服务器版本docker安装教程</h1><p>Reference in Chinese：<br>[1]<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_47425074/article/details/139064776">https://blog.csdn.net/weixin_47425074/article/details/139064776</a><br>[2]<a target="_blank" rel="noopener" href="https://www.cnblogs.com/a120608yby/p/17880004.html">https://www.cnblogs.com/a120608yby/p/17880004.html</a>  </p>
+<p>To use docker on <strong>Windows Server</strong> system, you have to install the <strong>“docker-ee”</strong> edtion(<strong>Docker Enterprise Edition</strong>) instead of the desktop client(which is referred to as “docker-ce”) for personal usage.</p>
+<ul>
+<li><p>Start and check the “Hyper-V” and “container” services in the <strong>server manager</strong> of <strong>control panel</strong>. Restart the server(computer) after this step.<br><img src="/images/fig/docker_server_container.png" alt="Container service[1]"></p>
+</li>
+<li><p>Download the docker setup package from this link：<br><a target="_blank" rel="noopener" href="https://download.docker.com/win/static/stable/x86_64/">https://download.docker.com/win/static/stable/x86_64/</a><br><strong>An important note</strong>: The Windows server system deployed in our group is kind of out of date. Therefore it is important not to download the latest version of docker from the site to <strong>avoid Errors</strong> in the installation process. </p>
+</li>
+<li><p>Decompress the downloaded file to your desired position and configure the corresponding environment variables：<br><img src="/images/fig/docker_server_environment.png" alt="Environment variables[2]"></p>
+</li>
+<li><p>Register the docker service(Run CMD as administrator)</p>
+  <figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dockerd --register-service</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Start the docker service(Run PowerShell as administrator)</p>
+  <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Start-Service</span> docker</span><br></pre></td></tr></table></figure>
+
+<p>  If no error message appears, the docker is successfully deployed on your system.</p>
+</li>
+<li><p>Configure the <code>daemon.json</code>(For Chinese users only)(创建 C:\ProgramData\Docker\config 目录，在config目录下创建 daemon.json 文件)</p>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">    &#123;</span><br><span class="line">      &quot;registry-mirrors&quot;: [</span><br><span class="line">      &quot;https://docker.mirrors.ustc.edu.cn&quot;,</span><br><span class="line">      &quot;https://registry.docker-cn.com&quot;,</span><br><span class="line">      &quot;http://hub-mirror.c.163.com&quot;,</span><br><span class="line">      &quot;https://mirror.ccs.tencentyun.com&quot;</span><br><span class="line">      ],</span><br><span class="line">      &quot;insecure-registries&quot;: [&quot;127.0.0.1/8&quot;, &quot;reg.example.com&quot;],</span><br><span class="line">      &quot;data-root&quot;: &quot;d:\\docker&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Restart the service (Run PowerShell as administrator)：</p>
+  <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Restart-Service</span> docker</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Set automatic startup：<br>  Run PowerShell as administrator</p>
+  <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Set-Service</span> docker <span class="literal">-StartupType</span> Automatic</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>When docker service fails to start, the “<strong>docker engine</strong>“ log can be obtained in <code>PowerShell</code> as follows: (For example, incompatibility between docker and my system version is encountered in my case(<strong>4 fatal: failed to start daemon: this version of Windows does not support…</strong>). The docker log provides clear and helpful information. This tool is really useful.)</p>
+  <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Get-EventLog</span> <span class="literal">-LogName</span> Application <span class="literal">-Source</span> Docker</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Reinstall and register the docker service (PowerShell):</p>
+<ul>
+<li>Stop and remove the current docker service：  <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sc.exe delete docker</span><br></pre></td></tr></table></figure>
+  This will remove the current docker service, <strong>including the accompanying registry entries</strong>. To ensure a complete delete, <strong>it is then suggested to remove these registry entries manually</strong>.  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Press &quot;Win + R&quot; to open the &quot;Run&quot; dialog. Then enter &quot;regedit&quot; to open the Registry Editor.  </span><br><span class="line">Navigate to the following position：</span><br><span class="line">HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\EventLog\Application\docker  </span><br><span class="line">Right click the &quot;docker&quot; folder and delete it.</span><br></pre></td></tr></table></figure></li>
+<li>Then register the docker service again：  <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dockerd <span class="literal">--register-service</span></span><br></pre></td></tr></table></figure></li>
+<li>If everything goes well, you can now start the docker service：  <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Start-Service</span> docker</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -682,7 +802,7 @@ and then follow the installation instructions above.</li>
 
   <div class="copyright">
     &copy; 
-    <span itemprop="copyrightYear">2024</span>
+    <span itemprop="copyrightYear">2025</span>
     <span class="with-love">
       <i class="fa fa-heart"></i>
     </span>
