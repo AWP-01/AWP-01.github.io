@@ -121,13 +121,13 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">7</span>
+          <span class="site-state-item-count">8</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-count">5</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -148,6 +148,96 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://awp-01.github.io/2025/07/02/Sampling-data-over-a-line-during-OpenFOAM-simulation/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Space boy!">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Space boy's blog">
+      <meta itemprop="description" content="Welcome to my technical blog, where I would share some of my learning and experience in Computational Fluid Dynamics(CFD) and computer knowledge.">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Space boy's blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2025/07/02/Sampling-data-over-a-line-during-OpenFOAM-simulation/" class="post-title-link" itemprop="url">Sampling data over a line during OpenFOAM simulation</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2025-07-02 08:56:24 / Modified: 09:07:25" itemprop="dateCreated datePublished" datetime="2025-07-02T08:56:24+08:00">2025-07-02</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/OpenFOAM/" itemprop="url" rel="index"><span itemprop="name">OpenFOAM</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>I have joined a work far from CFD for now. However, I encountered a task that requires a CFD simulation to reveal the physical process recently. The open-source solution comes to my mind at first priority. I started to install the latest OpenFOAM(12) in my new laptop and then re-learned the key points to implement the simulation. However, the OpenFOAM implementation is far from filling parameters and clicking “Run”. The references are also somewhat scattered on the internet. It takes quite a long time to pick up OpenFOAM again since I did not learn OpenFOAM very deeply, however, it is worth it.</p>
+<p>In my task, I want to monitor a variable over the central line at every 10 timesteps. After searching the Internet, I found that this can be realized through the <strong>functions</strong> utility. However, I didn’t find a direct example. Here I provide my implementation for your reference.(<strong>Note</strong>: Function objects are OpenFOAM utilities to ease workflow configurations and enhance workflows by <strong>producing additional user-requested data both during runtime and postprocessing calculations</strong>, typically in the form of additional logging to the screen, or generating text, image and field files.[1])</p>
+<p>The <strong>functions</strong> block can be added in the <strong>system&#x2F;controlDict</strong> directory. I was inspired by the discussions on cfd-online[2] and the comments from ufocfd.</p>
+<p>Then I searched on Google about the topic “openfoam write variable over a line at every timestep”. The Google AI search gives the following code example:  </p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">functions</span><br><span class="line">&#123;</span><br><span class="line">    mySampler</span><br><span class="line">    &#123;</span><br><span class="line">        type            sample;</span><br><span class="line">        <span class="built_in">libs</span>            (<span class="string">&quot;libsampling.so&quot;</span>);</span><br><span class="line"></span><br><span class="line">        outputControl   timeStep;</span><br><span class="line">        outputInterval  <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">        <span class="built_in">fields</span>          (U p T);</span><br><span class="line"></span><br><span class="line">        <span class="built_in">sets</span></span><br><span class="line">        (</span><br><span class="line">            myLine</span><br><span class="line">            &#123;</span><br><span class="line">                type            line;</span><br><span class="line">                <span class="built_in">start</span>           (<span class="number">0</span> <span class="number">0</span> <span class="number">0</span>);</span><br><span class="line">                <span class="built_in">end</span>             (<span class="number">1</span> <span class="number">0</span> <span class="number">0</span>);</span><br><span class="line">                nPoints         <span class="number">100</span>;</span><br><span class="line">                interpolationScheme cellPoint;</span><br><span class="line">            &#125;</span><br><span class="line">        );</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>It gives me a lot of confidence though the AI generated code does not work generally, especially for OpenFOAM which is not widely used by people worldwide. Whatever, it is a good start. Thank you LLM.</p>
+<p>I copied the code into <strong>system&#x2F;controlDict</strong> and compile the code. OpenFOAM complains about the code errors, such as the unknown type of <strong>sampling</strong>. With the “banana” method, I can quickly correct the code block in the following:</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">functions</span><br><span class="line">&#123;</span><br><span class="line">    height_sampler</span><br><span class="line">    &#123;</span><br><span class="line">        type        sets;</span><br><span class="line">        <span class="built_in">libs</span>        (<span class="string">&quot;libsampling.so&quot;</span>);</span><br><span class="line"></span><br><span class="line">        executeControl      timeStep;</span><br><span class="line">        executeInterval     <span class="number">10</span>;</span><br><span class="line">        writeControl        timeStep;</span><br><span class="line">        writeInterval       <span class="number">10</span>;</span><br><span class="line"> </span><br><span class="line">        interpolationScheme     cellPoint;</span><br><span class="line">        setFormat               raw;</span><br><span class="line"></span><br><span class="line">        <span class="built_in">fields</span>      (alpha.fuel);</span><br><span class="line"></span><br><span class="line">        <span class="built_in">sets</span></span><br><span class="line">        (</span><br><span class="line">            monitor_line</span><br><span class="line">            &#123;</span><br><span class="line">                type        lineUniform;</span><br><span class="line">                <span class="built_in">start</span>       (<span class="number">0.5</span> <span class="number">-0.2</span> <span class="number">0</span>);</span><br><span class="line">                <span class="built_in">end</span>         (<span class="number">0.5</span> <span class="number">1.0</span> <span class="number">0</span>);</span><br><span class="line">                nPoints     <span class="number">100</span>;</span><br><span class="line">                interpolationScheme     cellPoint;</span><br><span class="line">            &#125;</span><br><span class="line">        );</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Now the monitored data will be stored in the <strong>postProcessing&#x2F;</strong> directory.</p>
+<p>In the above code block, <strong>sets</strong> can define the sampling line I am using. <strong>executeControl</strong> and <strong>writeControl</strong> control the implementation of the code block. The <strong>interpolationScheme</strong> can be referred on the sampling webpage[3]. For example, the “cellPoint” scheme I used applies linear weighted interpolation using cell values.</p>
+<p>With the help of LLMs, the development of user modules is greatly accelerated.</p>
+<p><strong>Ref</strong>:<br>[1] <a target="_blank" rel="noopener" href="https://www.openfoam.com/documentation/guides/latest/doc/guide-function-objects.html">https://www.openfoam.com/documentation/guides/latest/doc/guide-function-objects.html</a><br>[2] <a target="_blank" rel="noopener" href="https://www.cfd-online.com/Forums/openfoam-post-processing/219747-openfoam-monitor-flow-value-internal-surface.html">https://www.cfd-online.com/Forums/openfoam-post-processing/219747-openfoam-monitor-flow-value-internal-surface.html</a><br>[3] <a target="_blank" rel="noopener" href="https://www.openfoam.com/documentation/user-guide/7-post-processing/7.4-sampling-data">https://www.openfoam.com/documentation/user-guide/7-post-processing/7.4-sampling-data</a></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
